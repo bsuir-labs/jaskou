@@ -12,7 +12,6 @@ public:
 	Base() {}
 	virtual ~Base() {}
 	virtual void print(ostream&) = 0;
-	friend void run();
 };
 
 /* PRODUCT */
