@@ -42,8 +42,8 @@ String::String(const char *s)
 
 void String::set(const char *s)
 {
-	if (this->s != nullptr) { 
-		delete[] this->s; 
+	if (this->s != nullptr) {
+		delete[] this->s;
 		//logger("this->s deleted;", MEMCLE);
 	}
 	this->s = new char[strlen(s) + 1];
@@ -150,7 +150,7 @@ int main()
 	cin >> L;
 
 	ofstream outputfile("output.txt");
-	outputfile << "source string: " << L << endl; 
+	outputfile << "source string: " << L << endl;
 	laboratoryTask(L);
 	outputfile << "output string: " << L << endl;
 

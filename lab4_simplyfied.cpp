@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
-#include <stdio.h>
+// #include <stdio.h>
+#include <cstdio>
 
 //#define LOCAL
 
@@ -32,8 +33,8 @@ String::String(const char *s)
 
 void String::set(const char *s)
 {
-    if (this->s != nullptr) { 
-        delete[] this->s; 
+    if (this->s != nullptr) {
+        delete[] this->s;
     }
     this->s = new char[strlen(s) + 1];
     strcpy(this->s, s);
@@ -86,14 +87,15 @@ void laboratoryTask(String& s)
 void readString(String& s)
 {
     char line[256];
-    gets_s(line, 256);
+    // gets_s(line, 256);
+    gets(line); // TODO: replace with gets_s
     s = line;
 }
 
 int main()
 {
     String L;
-    
+
 
     ofstream outputfile("output.txt");
     outputfile << "source string: ";
