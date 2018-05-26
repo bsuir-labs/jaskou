@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> // delete this
+#include <string.h> 
 #include <fstream>
 
 //#define LOCAL
