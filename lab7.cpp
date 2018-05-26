@@ -3,6 +3,8 @@
 #include <set>
 #include <vector>
 #include <fstream>
+#include <string.h>
+#include <exception>
 
 using namespace std;
 
@@ -148,7 +150,7 @@ void Factory::print(ostream& stream)
 void run(int factoryNumber, vector<Factory> &factories, ofstream& stream)
 {
 	if (factoryNumber < 0 || factoryNumber >= factories.size())
-		throw exception("Array index is out of range!");
+		throw exception();
 
 	if (factories[factoryNumber].products.empty())
 	{
@@ -208,17 +210,20 @@ int main()
 	}
 
 	while (true) {
-		cout << "Enter number of factory: ";
+		cout << "Enter number of factory or -1 to exit: ";
 		int x;
 		cin >> x;
+
+		if (x == -1) break;
+
 		try {
 			run(x, factories, file);
 		}
 		catch (exception &e) {
-			cout << e.what() << endl;
+			cout << "Some error" << endl;
 		}
 	}
-
+	file.close();
 	system("pause");
 	return 0;
 }
